@@ -1,0 +1,28 @@
+<!-- HTML: Assuming you have an input field for the coupon code with id="coupon_code" -->
+<input type="text" id="coupon_code" placeholder="Enter Coupon Code">
+
+<!-- Make sure you include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- jQuery script to handle the events -->
+<script>
+$(document).ready(function() {
+  // Target the coupon code input field
+  var $couponCodeInput = $('#coupon_code');
+
+  // Variable to store the coupon code value
+  var couponCodeValue = '';
+
+  // Event handler for keyup event
+  $couponCodeInput.on('keyup', function(event) {
+    // Update the couponCodeValue variable with the current input value
+    couponCodeValue = $(this).val();
+  });
+
+  // Event handler for blur event (when the input loses focus)
+  $couponCodeInput.on('blur', function() {
+    // Output the coupon code value to the console
+    console.log('Coupon Code: ' + couponCodeValue);
+  });
+});
+</script>
